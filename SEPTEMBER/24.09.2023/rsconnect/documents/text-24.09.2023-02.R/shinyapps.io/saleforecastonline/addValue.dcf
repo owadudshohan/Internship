@@ -1,0 +1,13 @@
+name: addValue
+title: addValue
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9969427
+bundleId: 7720971
+url: https://saleforecastonline.shinyapps.io/addValue/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 24.09.2023-3.R|24.09.2023-4.R|self1.R|self2.R|test-24.09.23.R|The app.R

@@ -1,0 +1,13 @@
+name: TheApp-25
+title: TheApp-25
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 9975064
+bundleId: 7722925
+url: https://saleforecastonline.shinyapps.io/TheApp-25/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 24.09.2023-3.R|24.09.2023-4.R|self1.R|self2.R|test-24.09.23.R|text-24.09.2023-02.R|The app.R
