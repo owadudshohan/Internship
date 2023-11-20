@@ -1,0 +1,13 @@
+name: FACET-GRID
+title: FACET-GRID
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10367174
+bundleId: 7872678
+url: https://saleforecastonline.shinyapps.io/FACET-GRID/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 17.3 Modifying thems-1.R|17.3 Modifying thems-2(title color change).R|17.3 Modifying thems-3(title position change).R|FACET WRAP-shiny app.R|Grid major+minor--element blank.R|Pannel-Background(fill color and border color).R|Plot-Background(fill color).R|Plot-Background(fill color, border color, pannel background, grid color)-customized.R|Theme-change_pannel_background.R|Theme-grid_linetype=dotted.R|Theme-grid_linewidth.R|Theme-margin-1(Title margin set).R|Theme-margin-2(axis margin set).R|Themes-grid color and point color(customized).R|Themes-grid color and point color.R

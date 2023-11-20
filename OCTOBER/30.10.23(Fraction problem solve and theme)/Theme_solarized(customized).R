@@ -1,0 +1,5 @@
+library(ggplot2)
+library(ggthemes)
+df <- data.frame(x = 1:3, y = 1:3)
+base <- ggplot(df, aes(x, y)) + geom_point(aes(), color="white")
+base + theme_solarized(base_size = 12, light = FALSE) + ggtitle("theme_solarized()")

@@ -1,0 +1,7 @@
+library(ggplot2)
+library(ggthemes)
+df <- data.frame(x = 1:3, y = 1:3)
+base <- ggplot(df, aes(x, y)) + geom_point()
+#base + theme_tufte() + ggtitle("theme_tufte()")
+base + theme_solarized() + ggtitle("theme_solarized()")
+#base + theme_excel() + ggtitle("theme_excel()")
