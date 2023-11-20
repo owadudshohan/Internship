@@ -1,0 +1,13 @@
+name: Middle-side
+title: Middle-side
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10577524
+bundleId: 7947832
+url: https://saleforecastonline.shinyapps.io/Middle-side/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: phone full plot.R|phone screen-0.R|Phone screen-1.R|vaiya given practics-1.R|vaiya given practics-2.R|vaiya given practics-3.R

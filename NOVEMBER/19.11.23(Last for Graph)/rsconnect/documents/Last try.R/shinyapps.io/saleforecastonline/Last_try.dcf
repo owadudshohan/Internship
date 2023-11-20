@@ -1,0 +1,13 @@
+name: Last_try
+title: Last_try
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10570092
+bundleId: 7944241
+url: https://saleforecastonline.shinyapps.io/Last_try/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: desired rating shiny app.R|home try-2.R|try nodes label to responsive.R

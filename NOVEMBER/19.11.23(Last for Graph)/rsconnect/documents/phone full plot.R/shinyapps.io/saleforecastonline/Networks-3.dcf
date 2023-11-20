@@ -1,0 +1,13 @@
+name: Networks-3
+title: Networks-3
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10570366
+bundleId: 7944431
+url: https://saleforecastonline.shinyapps.io/Networks-3/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|desired rating shiny app.R|home try-2.R|Last try.R|try nodes label to responsive.R

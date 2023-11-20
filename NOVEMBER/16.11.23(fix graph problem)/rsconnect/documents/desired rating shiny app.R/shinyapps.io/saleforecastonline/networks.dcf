@@ -1,0 +1,13 @@
+name: networks
+title: networks
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10546715
+bundleId: 7935370
+url: https://saleforecastonline.shinyapps.io/networks/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: all screnn shiny app.R|home try.R|responsive all screen.R|Small screen 2.R|small screen 3.R|small screen 4.R|try for responsive.R|try nodes label to responsive.R

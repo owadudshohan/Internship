@@ -1,0 +1,13 @@
+name: shinyapp
+title: shinyapp
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10426996
+bundleId: 7893925
+url: https://saleforecastonline.shinyapps.io/shinyapp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 7.2.1 normal graph.R|7.2.2(drawing nodes).R|Final solution for plot_circle.R|Plot circle-1.R|Plot circle-2.R|plot circle-3.R|plot_circle-4.R|simple-run.R

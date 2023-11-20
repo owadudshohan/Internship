@@ -1,0 +1,13 @@
+name: Networks-2
+title: Networks-2
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10570302
+bundleId: 7944373
+url: https://saleforecastonline.shinyapps.io/Networks-2/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|home try-2.R|Last try.R|try nodes label to responsive.R
