@@ -5,8 +5,8 @@ library(stringr)
 library(ggplot2)
 
 # Define the new data
-hotelName <- c("Hotel A bla  bla bla", "Hotel B bla  bla bla", "Hotel C bla  bla bla", "Hotel D bla  bla bla", "Hotel E bla  bla bla", "Hotel F bla  bla bla", "Hotel G bla  bla bla", "Hotel H bla  bla bla", "Hotel I bla  bla bla", "Hotel J bla  bla bla")
-targetHotel <- "Hotel D bla  bla bla"
+hotelName <- c("Hotel A", "Hotel B", "Hotel C", "Hotel D", "Hotel E", "Hotel F", "Hotel G", "Hotel H", "Hotel I", "Hotel J")
+targetHotel <- "Hotel D"
 rowIndexOfTargetHotel <- which(hotelName == targetHotel)
 
 # Create nodes tibble
@@ -16,23 +16,23 @@ nodes <- tibble(id = 1:length(hotelName), label = hotelName)
 edges <- tibble(
   from = rep(rowIndexOfTargetHotel, length(hotelName) - 1),
   to = setdiff(1:length(hotelName), rowIndexOfTargetHotel),
-  rating = c(2.5, 4, 6, 3, 8, 7, 9, 5, 4)
+  rating = c(2, 4, 6, 3, 8, 7, 9, 5, 3)
 )
 
 # Create a tidygraph
 graph <- tbl_graph(nodes = nodes, edges = edges)
 
-# Set edge_size and layout
-graph <- graph %>%
-  set_edge_attr("edge_size", value = edges$rating)
+# Prices data
+prices <- c("Tk 1200", "Tk 1250", "Tk 1350", "Tk 1850", "Tk 1650", "Tk 2150", "Tk 1800", "Tk 2500", "Tk 1500", "Tk 1300")
 
+# Add edge_size and layout
+E(graph)$edge_size <- edges$rating
 layout <- layout_with_kk(graph, weights = E(graph)$edge_size)
 
-# Prices data
-prices <- c("Tk 1200", "Tk 1250", "Tk 1350", "Tk 1850", "Tk 1650", "Tk 2150", "Tk 1800", "Tk 2500", "Tk 1500", "Tk 1350")
+
 
 # Specify the desired_ratings vector
-desired_ratings <- c("r-2.5", "r-4", "r-6", "r-3", "r-8", "r-7", "r-9", "r-5.5", "r-4.5")
+desired_ratings <- c("r-2.5", "r-4", "r-6", "r-3", "r-8", "r-7", "r-9", "r-5.5", "r-3")
 
 # Plotting using ggplot2
 ggraph(graph, layout = layout) +

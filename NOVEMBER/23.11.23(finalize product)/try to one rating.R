@@ -1,4 +1,5 @@
 library(shiny)
+library(igraph)
 library(tidygraph)
 library(ggraph)
 library(tibble)
@@ -20,46 +21,47 @@ ui <- fluidPage(
 server <- function(input, output) {
   output$graphPlot <- renderPlot({
     # Define the new data
-    hotelName <- c("Hotel A bla  bla bla", "Hotel B bla  bla bla", "Hotel C bla  bla bla", "Hotel D bla  bla bla", "Hotel E bla  bla bla", "Hotel F bla  bla bla", "Hotel G bla  bla bla", "Hotel H bla  bla bla", "Hotel I bla  bla bla", "Hotel J bla  bla bla")
+    hotelName <- c("Hotel A bla  bla bla sometext", "Hotel B bla  bla bla", "Hotel C bla  bla bla", "Hotel D bla  bla bla", "Hotel E bla  bla bla", "Hotel F bla  bla bla", "Hotel G bla  bla bla")
+    rating <- c("r-2.5", "r-4", "r-6", "r-3", "r-8", "r-7")
     targetHotel <- "Hotel D bla  bla bla"
     rowIndexOfTargetHotel <- which(hotelName == targetHotel)
     
     # Create nodes tibble
     nodes <- tibble(id = 1:length(hotelName), label = hotelName)
     
-    # Create edges tibble (assuming you want to connect all hotels to the target hotel)
+    # Create edges tibble with desired ratings
     edges <- tibble(
       from = rep(rowIndexOfTargetHotel, length(hotelName) - 1),
       to = setdiff(1:length(hotelName), rowIndexOfTargetHotel),
-      rating = c(2.5, 4, 6, 3, 8, 7, 9, 5, 4)
+      rating = rating  # Added this line to make sure rating is associated with each edge
     )
     
     # Create a tidygraph
     graph <- tbl_graph(nodes = nodes, edges = edges)
     
-    # Prices data
-    prices <- c("Tk 1200", "Tk 1250", "Tk 1350", "Tk 1850", "Tk 1650", "Tk 2150", "Tk 1800", "Tk 2500", "Tk 1500", "Tk 1350")
-    
     # Add edge_size and layout
-    E(graph)$edge_size <- edges$rating
+    E(graph)$edge_size <- as.numeric(gsub("r-", "", edges$rating)) #convert r-8 to numeric 8
     layout <- layout_with_kk(graph, weights = E(graph)$edge_size)
     
+    # Prices data
+    prices <- c("Tk 1200", "Tk 1250", "Tk 1350", "Tk 1850", "Tk 1650", "Tk 2150", "Tk 1800")
     
-    # Specify the desired_ratings vector
-    desired_ratings <- c("r-2.5", "r-4", "r-6", "r-3", "r-8", "r-7", "r-9", "r-5.5", "r-4.5")
+    # Additional text for "7.5"
+    targetrating <- ifelse(nodes$label == targetHotel, "r-7.5", "")
     
     # Plotting using ggplot2
     ggraph(graph, layout = layout) +
-      geom_edge_link(aes(label = desired_ratings, vjust = 1, hjust = -0.6, color = "darkorange"), 
+      geom_edge_link(aes(label = rating, vjust = -0.2, hjust = -0.7, color = "darkorange"), 
                      show.legend = FALSE,
                      start_cap = circle(5, "mm"),
                      end_cap = circle(5, "mm")) +
-      geom_node_point(aes(color = as.factor(id)), size = 20) +
-      geom_node_text(aes(label = str_wrap(nodes$label, width = 12)), vjust = 0.2, hjust = 0.5, size = 2.5) +
-      geom_node_text(aes(label = prices), vjust = 2, hjust = 0.5, size = 3, color = "black") +
+      geom_node_point(aes(color = as.factor(id)), size = ifelse(nodes$id == rowIndexOfTargetHotel, 28, 25)) +
+      geom_node_text(aes(label = str_wrap(nodes$label, width = 12)), vjust = 0.2, hjust = 0.5, size = ifelse(nodes$id == rowIndexOfTargetHotel, 3.4, 3.2)) +
+      geom_node_text(aes(label = prices), vjust = 2.7, hjust = 0.5, color = "black", size = ifelse(nodes$id == rowIndexOfTargetHotel, 3.4, 3.2)) +
+      geom_node_text(aes(label = targetrating), vjust = 4, hjust =0.5, size = 3.4, color = "red") +  # Adjust vjust here
       theme_void() +
       theme(
-        plot.margin = margin(1, 1, 1, 1, "cm"),
+        plot.margin = margin(0.1, 0.1, 0.1, 0.1, "cm"),
         legend.position = "none"
       )
   })

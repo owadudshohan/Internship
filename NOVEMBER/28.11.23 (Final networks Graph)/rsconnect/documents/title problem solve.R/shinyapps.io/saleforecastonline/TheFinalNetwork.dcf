@@ -1,0 +1,13 @@
+name: TheFinalNetwork
+title: TheFinalNetwork
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10661813
+bundleId: 7983251
+url: https://saleforecastonline.shinyapps.io/TheFinalNetwork/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Final Networks Graph.R

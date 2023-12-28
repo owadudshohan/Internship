@@ -1,0 +1,13 @@
+name: Test-7
+title: Test-7
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10600462
+bundleId: 7956586
+url: https://saleforecastonline.shinyapps.io/Test-7/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Test(10 Hotels).R|Test(2 hotels).R|Test(3 hotels).R|Test(4 hotels).R|Test(5 hotels).R|Test(6 Hotels).R|Test(8 hotels).R|Test(9 hotels).R|What happend when only one hotel.R

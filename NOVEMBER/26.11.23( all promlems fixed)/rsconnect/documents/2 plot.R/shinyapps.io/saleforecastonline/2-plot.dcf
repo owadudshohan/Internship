@@ -1,0 +1,13 @@
+name: 2-plot
+title: 2-plot
+username: saleforecastonline
+account: saleforecastonline
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10628409
+bundleId: 7969953
+url: https://saleforecastonline.shinyapps.io/2-plot/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 2 plot-1.R|2 plot up-down.R|All problem fix-2.R|All problem fix-3.R|All problem fix.R
